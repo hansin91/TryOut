@@ -8,20 +8,23 @@
    <p id="output"></p>
     <script>
       function calculate() {
-        var input;
-       // while (input !=='=') {
+        let input;
+        let sum = 0;
+        while (input !=='=') {
           input = prompt('Please input your number','');
-          input = parseInt(input);
-          console.log(typeof input);
-          // if (typeof input !== 'number' ) {
-          //   alert('You have to input a number');
-          // }
-          // input += input;
-          // if (input === '='){
-          //   document.getElementById('output').innerHTML = 'Output: '+input;
-          //   break;
-          // }
-       // }
+          let regex = /\d+/g;
+          if (!input.match(regex) && input !=='=') {
+            alert('Please input a number');
+          } else {
+            if (input !=='=') {
+              sum += parseInt(input);
+            }
+          }
+          if (input == "="){
+            document.getElementById('output').innerHTML = 'Output: '+sum;
+            break;
+          }
+        }
       }
     </script>
   </body>
