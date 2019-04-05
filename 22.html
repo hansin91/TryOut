@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>Temprature Converter</title>
+    <meta charset="UTF-8">
+  </head>
+  <body onload="load()">
+  <p>Temprature Converter</p>
+   
+  
+   <p id="input1"></p>
+   <p id="output1"></p>
+
+   <p id="input2"></p>
+   <p id="output2"></p>
+
+   <p id="input3"></p>
+   <p id="output3"></p>
+
+   <p id="input4"></p>
+   <p id="output4"></p>
+
+   <p id="input5"></p>
+   <p id="output5"></p>
+
+   <p id="input6"></p>
+   <p id="output6"></p>
+
+    <script>
+      function load() {
+        document.getElementById('input1').innerHTML ="Input: celciusToKelvin(80)";
+        document.getElementById('output1').innerHTML ='Output: '+celciusToKelvin(80);
+
+        document.getElementById('input2').innerHTML ="Input:  kelvinToCelius(298.15)";
+        document.getElementById('output2').innerHTML ='Output: '+kelvinToCelcius(298.15);
+
+        document.getElementById('input3').innerHTML ="Input:  fahrenheitToCelcius(36.5)";
+        document.getElementById('output3').innerHTML ='Output: '+fahrenheitToCelcius(36.5);
+
+        document.getElementById('input4').innerHTML ="Input:  celciusToFahrenheit(22)";
+        document.getElementById('output4').innerHTML ='Output: '+celciusToFahrentheit(22);
+
+        document.getElementById('input5').innerHTML ="Input:  fahrenheitToKelvin(234)";
+        document.getElementById('output5').innerHTML ='Output: '+fahrenheitToKelvin(234);
+
+        document.getElementById('input6').innerHTML ="Input:  kelvinToFahrenheit(203)";
+        document.getElementById('output6').innerHTML ='Output: '+kelvinToFahrenheit(203);
+      }
+
+      function celciusToKelvin(value) {
+        return value + 273.15;
+      }
+
+      function kelvinToCelcius(value) {
+        return value - 273.15;
+      }
+
+      function fahrenheitToCelcius(value) {
+        return  ( (value-32) * (5/9));
+      }
+
+      function celciusToFahrentheit(value) {
+        return (value * (9/5)) + 32;
+      }
+
+      function fahrenheitToKelvin(value) {
+        return ((value+459.67) * (5/9)).toFixed(3);
+      }
+
+      function kelvinToFahrenheit(value) {
+        return ( (value * (9/5)) - 459.67).toFixed(2);
+      }
+
+    </script>
+  </body>
+</html>

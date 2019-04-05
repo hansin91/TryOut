@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Array to String</title>
+  </head>
+  <body onload="display()">
+    <p>Array to String</p>
+    <br>
+   <p id="output"></p>
+    <script>
+      const fruits = [
+        {name: 'Pepaya', price: 3000},
+        {name: 'Jagung', price: 2000},
+        {name: 'Mengkudu', price: 4000},
+        {name: 'Kiwi', price: 6000},
+      ]
+      function display() {
+        var array=[];
+        fruits.map((el) => array.push(el.name+': '+el.price) );
+        document.getElementById('output').innerHTML = 'Output: <br>'+array.join("<br>");
+      }
+    </script>
+  </body>
+</html>

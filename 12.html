@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Mirror</title>
+  </head>
+  <body>
+    <p>Mirror</p>
+    <br>
+    <button onclick="concat()">Click this button to input your word</button>
+   <p id="input"></p>
+   <p id="output"></p>
+    <script>
+      function concat() {
+        var input = prompt('Please input your word','');
+        if (input!==null) {
+          document.getElementById('input').innerHTML = 'Input: '+input;
+          var arr = input.split('');
+          arr.reverse();
+          var result =input+arr.join('');
+          document.getElementById('output').innerHTML = 'Output: '+result;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Loop with Range</title>
+  </head>
+  <body>
+    <p>Loop with Range</p>
+    <br>
+    <div>
+      <button onclick="firstInput()">Click this button to insert your first number</button>
+      <br>
+      <button onclick="secondInput()">Click this button to insert your second number</button>
+    </div>
+    <p id="first"></p>
+    <p id="second"></p>
+    <p id="output"></p>
+    <script>
+      var first;
+      var second;
+      function firstInput() {
+        first = prompt('Please input your first number','');
+        if (first !==null) {
+          document.getElementById('first').innerHTML = 'First Input: '+first;
+        }
+      }
+
+      function secondInput() {
+        second = prompt('Please input your second number');
+        if (second !== null ) {
+          if (second > first) {
+            document.getElementById('second').innerHTML = 'Second Input: '+second;
+            document.getElementById('output').innerHTML ='Output: '+looping();
+          } else {
+          alert('Second number has to be greather than first number');
+          }
+        }
+      }
+
+      function looping() {
+        var array = [];
+        if (first !== null && second !== null) {
+          for (var a=first; a<=second;a++) {
+            array.push(a);
+          }
+        }
+        return array.join(', ');
+      }
+    </script>
+  </body>
+</html>

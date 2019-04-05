@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Ganjil Genap</title>
+  </head>
+  <body>
+    <p>Ganjil Genap</p>
+    <br>
+    <button onclick="calculate()">Click this button to insert your number</button>
+   <p id="number"></p>
+   <p id="output"></p>
+    <script>
+      function calculate() {
+        var input = prompt('Please input your number','');
+        if (input !==null) {
+          document.getElementById('number').innerHTML = 'Input: '+input;
+          document.getElementById('output').innerHTML = 'Output: '+ checkNumber(input);
+        }
+      }
+
+      function checkNumber(number) {
+        number = parseInt(number);
+        var result = '';
+        if (number % 2 ===0) {
+          result = 'Genap';
+        } else {
+          result ='Ganjil';
+        }
+        return result;
+      }
+    </script>
+  </body>
+</html>

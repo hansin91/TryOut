@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Reverse Words</title>
+  </head>
+  <body>
+    <p>Reverse Words</p>
+    <br>
+    <button onclick="reverse()">Click this button to insert your input</button>
+   <p id="input"></p>
+   <p id="output"></p>
+    <script>
+      function reverse() {
+        var input = prompt('Please input your words','');
+        if (input !==null) {
+          document.getElementById('input').innerHTML = 'Input: '+input;
+          document.getElementById('output').innerHTML ='Output: '+wordReverse(input);
+        }
+      }
+
+      function wordReverse(word) {
+        var arr = word.split(" ");
+        arr.reverse();
+        return arr.join(" ");
+      }
+    </script>
+  </body>
+</html>

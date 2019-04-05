@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Linear Search</title>
+    <meta charset="UTF-8">
+  </head>
+  <body onload="load()">
+  <p>Linear Search</p>
+    <div>
+      <p id="input"></p>
+      <p id="element">Element: Jeruk</p>
+      <p id="index"></p>
+    </div>
+
+    <script>
+      const fruits = [
+        'Anggur',
+        'Durian',
+        'Tomat',
+        'Bengkoang',
+        'Jeruk',
+        'Pepaya',
+        'Jambu',
+        'Manggis',
+        'Kelapa',
+        'Timun',
+      ]
+      function load() {
+        document.getElementById('input').innerHTML = 'Input: '+fruits.join(', ');
+        document.getElementById('index').innerHTML = 'Ouput: Element is index '+search('Jeruk');
+      }
+
+      function search(value) {
+        for(let i=0;i<fruits.length;i++) {
+          if (fruits[i] ===value) {
+            return i;
+          }
+        }
+        return -1;
+      }
+    </script>
+  </body>
+</html>

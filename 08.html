@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>Ganjil/Genap/Kelipatan</title>
+  </head>
+  <body>
+    <p>Ganjil/Genap/Kelipatan</p>
+    <br>
+    <button onclick="loopNumbers()">Click this button to process</button>
+   <p id="output"></p>
+    <script>
+      function loopNumbers() {
+        var numbers=[];
+        for (var i=1; i<=1000;i++) {
+          numbers.push(checkNumber(i));
+        }
+        if (numbers.length >0) {
+          document.getElementById('output').innerHTML = 'Output: <br>'+numbers.join('<br>');
+        }
+      }
+
+      function checkNumber(number) {
+        number = parseInt(number);
+        var result;
+        if (number % 2 !==0) {
+          result = number +'.' +' Ganjil';
+        }
+        if (number % 2 ==0) {
+          result =number +'.' +' Genap';
+        } 
+        if (number % 2 !==0 && number % 5 ==0) {
+          result = number +'.' +' Ganjil Kelipatan Lima';
+        } 
+        if (number % 2 ==0 && number % 5==0) {
+          result = number +'.' +' Genap Kelipatan Lima';
+        } 
+         if (number % 100 ==0) {
+          result = number +'.' +' Kelipatan Seratus';
+        }
+        return result;
+      }
+    </script>
+  </body>
+</html>

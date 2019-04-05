@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <title>Data Type</title>
+    <meta charset="UTF-8">
+  </head>
+  <body onload="load()">
+  <p>Data Type</p>
+   
+  
+   <p id="input1"></p>
+   <p id="output1"></p>
+
+   <p id="input2"></p>
+   <p id="output2"></p>
+
+   <p id="input3"></p>
+   <p id="output3"></p>
+
+   <p id="input4"></p>
+   <p id="output4"></p>
+
+   <p id="input5"></p>
+   <p id="output5"></p>
+
+   <p id="input6"></p>
+   <p id="output6"></p>
+
+   <p id="input7"></p>
+   <p id="output7"></p>
+
+
+    <script>
+      function load() {
+        let input1 = 39;
+        let input2 = 44.5;
+        let input3 = {"negara": "Indonesia"};
+        let input4 = {};
+        let input5 =  ["lobak", "timun", "cabai"];
+        let input6 = 0x1c;
+        let input7 = 0b11;
+        document.getElementById('input1').innerHTML ="Input: numConvert(10,'dec','bin')";
+        document.getElementById('output1').innerHTML ='Output: '+numConvert(10,'dec','bin');
+      }
+
+      function decimalToBinary(value) {
+        return (+value).toString(2);
+      }
+
+      let functions = [{
+        from: 'dec',
+        to: 'bin',
+        calculate: function(value) {
+          this.decimalToBinary(value);
+        }
+      }]
+
+      function numConvert(value, from, to) {
+        const map = functions.filter((el) => el.from ==from && el.to ==to);
+        map[0].calculate.call(value);
+      }
+
+      function decimalToHexa(value) {
+        return (+value).toString(16).toUpperCase();
+      }
+
+      function decimalToOct(value) {
+        return (+value).toString(8);
+      }
+
+      function binaryToDecimal(value) {
+        return parseInt(value, 2);
+      }
+
+      function binaryToHexa(value) {
+        return parseInt(value, 2).toString(16).toUpperCase();
+      }
+
+      function binaryToOct(value) {
+        return parseInt(value,2).toString(8);
+      }
+
+      function hexaToDecimal(value) {
+        return parseInt(value,16);
+      }
+
+      function hexaToBinary(value) {
+        return parseInt(value, 16).toString(2);
+      }
+
+      function hexaToOct(value) {
+        return parseInt(value, 16).toString(8);
+      }
+
+      function octToDecimal(value) {
+        return parseInt(value, 8);
+      }
+
+      function octToBinary(value) {
+        return parseInt(value,8).toString(2);
+      }
+
+      function octToHexa(value) {
+        return parseInt(value, 8).toString(16);
+      }
+    </script>
+  </body>
+</html>

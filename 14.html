@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Filter Data</title>
+  </head>
+  <body onload="display()">
+    <p>Filter Data</p>
+    <br>
+   <p id="output"></p>
+    <script>
+      const people = [
+        { id: 1, name: 'Udin', age: 12 },
+        { id: 1, name: 'Wati', age: 51 },
+        { id: 1, name: 'Budi', age: 34 },
+        { id: 1, name: 'Agus', age: 16 },
+        { id: 1, name: 'Sari', age: 19 },
+        { id: 1, name: 'Ririn', age: 21 },
+      ]
+      function display() {
+        const under21 = people.filter((el) => el.age < 21);
+        document.getElementById('output').innerHTML = 'Output: <br>'+JSON.stringify(under21);
+      }
+    </script>
+  </body>
+</html>

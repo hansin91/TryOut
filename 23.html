@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>FIFO (First In First Out) a.k.a Queue</title>
+    <meta charset="UTF-8">
+  </head>
+  <body onload="load()">
+  <p>FIFO (First In First Out) a.k.a Queue</p>
+   
+  
+    <div>
+      <input type="text" name="data" id="input">
+      <button onclick="add()">IN</button>
+      <button onclick="remove()">OUT</button>
+    </div>
+
+    <div>
+      <p id="output"></p>
+    </div>
+
+    <script>
+      let array = ['De Gea','Chris Smalling','Phil Jones','Antony Martial','Paul Pogba']
+      function load() {
+        document.getElementById('output').innerHTML = 'Input: '+array.join(', ');
+      }
+
+      function add() {
+        const data = document.getElementById('input').value;
+        array.unshift(data);
+        document.getElementById('output').innerHTML = 'Input: '+array.join(', ');
+      }
+
+      function remove() {
+        array.pop();
+        document.getElementById('output').innerHTML = 'Input: '+array.join(', ');
+      }
+    </script>
+  </body>
+</html>

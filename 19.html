@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Recursive Function</title>
+  </head>
+  <body onload="load()">
+  <p>Recursive Function</p>
+   <p id="input"></p>
+   <p id="output"></p>
+    <script>
+      let array=[];
+      function load() {
+        var input = parseInt(prompt('Please input your number'));
+        if (input !== null) {
+          document.getElementById('input').innerHTML ='Input: '+input;
+          countDown(input);
+          document.getElementById('output').innerHTML ='Output: '+array.join(', ');
+        }
+      }
+
+      function countDown(input) {
+        if (input == 1) {
+         array.push(input);
+          return 1;
+        } else {
+          array.push(input);
+          countDown(input -1);
+        }
+      }
+    </script>
+  </body>
+</html>

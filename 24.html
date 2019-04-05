@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>LIFO (Last In First Out) a.k.a Stack</title>
+    <meta charset="UTF-8">
+  </head>
+  <body onload="load()">
+  <p>LIFO (Last In First Out) a.k.a Stack</p>
+   
+  
+    <div>
+      <input type="text" name="data" id="input">
+      <button onclick="add()">IN</button>
+      <button onclick="remove()">OUT</button>
+    </div>
+
+    <div>
+      <p id="output"></p>
+    </div>
+
+    <script>
+      let array = ['De Gea','Chris Smalling','Phil Jones','Antony Martial','Paul Pogba']
+      function load() {
+        document.getElementById('output').innerHTML = 'Input: '+array.join(', ');
+      }
+
+      function add() {
+        const data = document.getElementById('input').value;
+        array.unshift(data);
+        document.getElementById('output').innerHTML = 'Input: '+array.join(', ');
+      }
+
+      function remove() {
+        array.shift();
+        document.getElementById('output').innerHTML = 'Input: '+array.join(', ');
+      }
+    </script>
+  </body>
+</html>

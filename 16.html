@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Palindrome</title>
+  </head>
+  <body>
+  <p>Palindrome</p>
+  <button onclick="checkPaliandrome()">Check Paliandrome</button>
+   <p id="input"></p>
+   <p id="output"></p>
+    <script>
+      function checkPaliandrome() {
+        var input = prompt('Please input your words','');
+        if (input!== null) {
+          document.getElementById('input').innerHTML= 'Input: '+input;
+          document.getElementById('output').innerHTML ='Output: '+ (isPaliandrome(input) ? 'Palindrome':'Bukan Palindrome')
+        }
+      }
+
+      function isPaliandrome(word) {
+        let pattern = /[\W_]/g;
+        let lowerCaseStr = word.toLowerCase().replace(pattern, '');
+        let reverseStr = lowerCaseStr.split('').reverse().join('');
+        return reverseStr === lowerCaseStr;
+      }
+    </script>
+  </body>
+</html>

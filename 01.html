@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Character Count</title>
+  </head>
+  <body>
+    <p>Character count</p>
+    <br>
+    <button onclick="countCharacter()">Click this button to insert your input</button>
+   <p id="input"></p>
+   <p id="length"></p>
+    <script>
+      function countCharacter() {
+        var input = prompt('Please input your word','');
+        if (input !==null) {
+          document.getElementById('input').innerHTML = 'Input: '+input;
+          document.getElementById('length').innerHTML = 'Output: '+input.length;
+        }
+      }
+    </script>
+  </body>
+</html>

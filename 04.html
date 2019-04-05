@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Tahun Kabisat</title>
+  </head>
+  <body>
+    <p>Tahun Kabisat</p>
+    <br>
+    <button onclick="calculate()">Click this button to insert your input</button>
+   <p id="year"></p>
+   <p id="output"></p>
+    <script>
+      function calculate() {
+        var input = prompt('Please input your year','');
+        if (input !==null) {
+          document.getElementById('year').innerHTML = 'Input: '+input;
+          document.getElementById('output').innerHTML = 'Output: '+ checkYear(input);
+        }
+      }
+
+      function checkYear(year) {
+        year = parseInt(year);
+        var isCheck = (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
+        var result = '';
+        if (isCheck) {
+          result ='Kabisat';
+        } else {
+          result = 'Bukan Kabisat';
+        }
+        return result;
+      }
+    </script>
+  </body>
+</html>

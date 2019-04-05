@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Rating Film</title>
+  </head>
+  <body>
+    <p>Rating Film</p>
+    <button onclick="calculateRating()">Click this button to insert your age</button>
+   <p id="age"></p>
+   <p id="rating"></p>
+    <script>
+      function calculateRating() {
+        var age = prompt('Please input your age','');
+        if (age !==null) {
+          document.getElementById('age').innerHTML = 'Input: '+age;
+          document.getElementById('rating').innerHTML = 'Output: '+ getRating(age)
+        }
+      }
+
+      function getRating(age) {
+        var result = '';
+        age = parseInt(age);
+        if (age >=21) {
+          result = 'Dewasa'
+        } else if (age >=13 ) {
+          result ='Remaja'
+        } else if (age >= 9) {
+          result ='Bimbingan Orang Tua';
+        } else if (age < 9) {
+          result = 'Semua Usia';
+        }
+        return result;
+      }
+    </script>
+  </body>
+</html>
