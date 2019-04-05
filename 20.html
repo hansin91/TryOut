@@ -53,10 +53,10 @@
         document.getElementById('input5').innerHTML ='Input: dataType('+JSON.stringify(input5)+')';
         document.getElementById('output5').innerHTML ='Output: '+checkDataType(input5);
 
-        document.getElementById('input6').innerHTML ='Input: dataType('+input6.toString(16)+')';
+        document.getElementById('input6').innerHTML ='Input: dataType('+(+input6).toString(16)+')';
         document.getElementById('output6').innerHTML ='Output: '+checkDataType(input6);
 
-        document.getElementById('input7').innerHTML ='Input: dataType('+input7.toString(2)+')';
+        document.getElementById('input7').innerHTML ='Input: dataType('+(+input7).toString(2)+')';
         document.getElementById('output7').innerHTML ='Output: '+checkDataType(input7);
 
       }
@@ -95,6 +95,7 @@
       }
 
       function checkDataType(input) {
+        console.log(input);
         if (isString(input)) {
           return 'string';
         }
@@ -111,9 +112,7 @@
           let hexadecimalRule = /^[0-9a-fA-F]+$/;
           if (hexadecimalRule.test(input)) {
             return 'hexadecimal';
-          }
-
-          if (isBinary(input)) {
+          } else if (isBinary(input)) {
             return 'binary';
           } else if (input % 1 == 0) {
             return 'integer';
